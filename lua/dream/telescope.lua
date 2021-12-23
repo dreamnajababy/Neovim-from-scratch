@@ -3,10 +3,18 @@ if not status_ok then
   return
 end
 
+telescope.load_extension('fzy_native')
+
 local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
+    file_sorter = require("telescope.sorters").get_fzy_sorter,
+    color_devicons = true,
+
+    file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+    grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+    qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
 
     prompt_prefix = " ",
     selection_caret = " ",
@@ -87,6 +95,10 @@ telescope.setup {
     -- builtin picker
   },
   extensions = {
+    fzy_native = {
+      override_generic_sorter = false,
+      override_file_sorter = true,
+    },
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,
