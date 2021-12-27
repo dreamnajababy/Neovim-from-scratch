@@ -42,6 +42,7 @@ packer.init {
 return packer.startup(function(use)
   -- OG plugins
   use "tpope/vim-surround"
+	use "ThePrimeagen/vim-be-good"
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
