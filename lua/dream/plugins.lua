@@ -75,6 +75,7 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
+	use "nvim-treesitter/playground"
 
   use {
     'numToStr/Comment.nvim',
@@ -82,6 +83,21 @@ return packer.startup(function(use)
       require('Comment').setup()
     end
   }
+
+	-- Lualine
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = {'kyazdani42/nvim-web-devicons', opt = true}
+	}
+
+	-- Nvim-tree
+	use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    },
+    config = function() require'nvim-tree'.setup {} end
+}
 
 
   -- Automatically set up your configuration after cloning packer.nvim

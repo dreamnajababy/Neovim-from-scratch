@@ -32,11 +32,18 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- Telescope
 keymap("n", "<C-p>", "<cmd>lua require'telescope.builtin'.git_files()<cr>", opts)
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>ww", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
-keymap("n", "<leader>gc", "<cmd>Telescope git_branches<cr>", opts)
 keymap("n", "<leader>gc", "<cmd>Telescope git_branches<cr>", opts)
 keymap("n", "<leader>ht", "<cmd>Telescope help_tags<cr>", opts)
 
+-- Nvim-tree
+keymap("n", "<C-n>", "<cmd>NvimTreeToggle <CR>", opts)
+keymap("n", "<leader>r", "<cmd>NvimTreeRefresh <CR>", opts)
+keymap("n", "<leader>n", "<cmd>NvimTreeFindFile <CR>", opts)
+
+-- Eslint
+keymap("n", "<leader>fm", "<cmd>EslintFixAll <CR>", opts)

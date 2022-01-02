@@ -21,7 +21,7 @@ vim.opt.timeoutlen = 1000                       -- time to wait for a mapped seq
 vim.opt.undofile = true                         -- enable persistent undo
 vim.opt.updatetime = 300                        -- faster completion (4000ms default)
 vim.opt.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
--- vim.opt.expandtab = true                        -- convert tabs to spaces
+vim.opt.expandtab = true                        -- convert tabs to spaces
 vim.opt.tabstop = 2                             -- insert 2 spaces for a tab
 vim.opt.shiftwidth = 2                          -- the number of spaces inserted for each indentation
 vim.opt.cursorline = true                       -- highlight the current line
@@ -36,6 +36,14 @@ vim.opt.guifont = "monospace:h17"               -- the font used in graphical ne
 
 vim.opt.shortmess:append "c"
 
+-- Ignore files
+vim.api.nvim_command("set path+=**")
+vim.api.nvim_command("set wildmode=longest,list,full")
+vim.api.nvim_command("set wildignore+=*.pyc")
+vim.api.nvim_command("set wildignore+=*_build/*")
+vim.api.nvim_command("set wildignore+=**/coverage/*")
+vim.api.nvim_command("set wildignore+=**/node_modules/*")
+vim.api.nvim_command("set wildignore+=**/.git/*")
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
