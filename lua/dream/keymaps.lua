@@ -8,10 +8,11 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-keymap("n", "<leader>bd", "<cmd>bd<cr>", opts)
-
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- Bufferline
+keymap("n", "Q", "<cmd>bdelete!<CR>", opts)
 
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
@@ -22,8 +23,8 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 -- Resize with arrows
 keymap("n", "<leader><Up>", ":resize +2<CR>", opts)
 keymap("n", "<leader><Down>", ":resize -2<CR>", opts)
-keymap("n", "<leader><Left>", ":vertical resize +2<CR>", opts)
-keymap("n", "<leader><Right>", ":vertical resize -2<CR>", opts)
+keymap("n", "<leader><Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<leader><Left>", ":vertical resize -2<CR>", opts)
 
 -- Terminal --
 -- Better terminal navigation
@@ -47,3 +48,4 @@ keymap("n", "<leader>n", "<cmd>NvimTreeFindFile <CR>", opts)
 
 -- Eslint
 keymap("n", "<leader>fm", "<cmd>EslintFixAll <CR>", opts)
+

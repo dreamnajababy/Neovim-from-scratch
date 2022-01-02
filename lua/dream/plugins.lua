@@ -98,6 +98,20 @@ return packer.startup(function(use)
     },
     config = function() require'nvim-tree'.setup {} end
 }
+  -- Buffer line
+  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+
+  -- ToggleTerm
+  use "akinsho/toggleterm.nvim"
+
+  -- Project
+  use "ahmedkhalf/project.nvim"
+
+  -- Quickscope
+  use "unblevable/quick-scope"
+  
+  -- Alpha-nvim
+  use "goolord/alpha-nvim"
 
 
   -- Automatically set up your configuration after cloning packer.nvim
