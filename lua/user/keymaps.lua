@@ -5,6 +5,10 @@ local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
+-- Delete all buffer except current one
+vim.api.nvim_create_user_command('Bufo', '%bd|e#', {})
+
+
 --Remap space as leader key
 -- keymap("", "<Space>", "<Nop>", opts)
 -- vim.g.mapleader = " "
@@ -18,12 +22,14 @@ local keymap = vim.api.nvim_set_keymap
 --   term_mode = "t",
 --   command_mode = "c",
 
+keymap("c", "bufo", "<cmd>%bd|e#<CR>", opts)
 -- Bufferline
-keymap("n", "Q", "<cmd>bdelete!<CR>", opts)
+keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
 -- Telescope
 keymap("n", "<C-p>", "<cmd>lua require'telescope.builtin'.git_files()<cr>", opts)
 -- NvimTree
 keymap("n", "<C-n>", "<cmd>NvimTreeToggle <CR>", opts)
+keymap("n", "<leader>r", "<cmd>NvimTreeRefresh <CR>", opts)
 
 
 
